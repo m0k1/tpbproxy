@@ -24,3 +24,5 @@ AUTHORS
 @blaeks - Bug trace  
 @NewTesla.net - Hosting  
 @Google - Helping with evrything  
+
+Old (not more used) svn url is: https://www.assembla.com/code/tpbproxy/subversion/nodes
