@@ -16,12 +16,11 @@ as the name is changed.
 
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
- 0. You just DO WHAT THE FUCK YOU WANT TO
+0. You just DO WHAT THE FUCK YOU WANT TO
  
- 
- AUTHORS
- ======
- @m0k1 - Main developer
- @blaeks - Bug trace
- @NewTesla.net - Hosting
- @Google - Helping with evrything
+AUTHORS
+======
+@m0k1 - Main developer  
+@blaeks - Bug trace  
+@NewTesla.net - Hosting  
+@Google - Helping with evrything  
