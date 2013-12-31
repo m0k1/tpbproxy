@@ -12,8 +12,8 @@ if ($get == "/settings" || $get == "/language" || $get == "/" || $get == "")
     echo ($loadurl);
     exit;
 }
+include("includes/config.php");
 include("includes/functions.php");
-include("includes/dn.php");
 $loadurl = $get;
 $loadurl = "http://$domaintoproxy$loadurl";
 $loadurl = str_replace(" ", "+", $loadurl);
