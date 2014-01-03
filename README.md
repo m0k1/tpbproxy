@@ -2,7 +2,7 @@ tpbproxy
 ======
 This script is made to "proxy" content from ThePirateBay.se
 It was originaly designed for http://pirati.rs but later we(PiratskaPartija.com) decided to move it to OpenSource. So evryone who want to proxy conent can proxy it with just a 1 php script :)
-
+WARNING: THIS BRANCH IS STABLE AS GREEK ECONOMY !
 LICENCE
 ======
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
