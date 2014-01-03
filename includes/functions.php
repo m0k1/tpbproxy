@@ -17,19 +17,36 @@ function remove_bloat($page)
 	$page = str_replace('&nbsp;Anonymous Download', '', $page);
 	$page = str_replace('https://static.thepiratebay.se', '/static', $page);
 	$page = str_replace("http://static.thepiratebay.org/img/bar.gif", "", $page);
-	$page = str_replace('torrent client</a>!)</div>', '</a>', $page);
+	$page = str_replace('torrent client</a>!)</div>', '', $page);
 	$page = str_replace('<div>(Problems with magnets links are fixed by upgrading your', '', $page);
 	//Designfix
 	$page = str_replace("Get this torrent", "DOWNLOAD TORRENT", $page);
-	$page = str_replace("<title>The Pirate Bay - The galaxy's most resilient bittorrent site</title>", "<title>Pirati.rs ThePirateBay Proxy by Serbian Pirates</title>", $page);
+	$page = str_replace("<title>The Pirate Bay - The galaxy's most resilient bittorrent site</title>", "<title>ThePirateBay Proxy</title>", $page);
 	//SearchFix
 	$page = str_replace("/s/", "/search.php", $page);
 	//CharFix
 	$page = str_replace('<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>', '<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">', $page);
 	$page = str_replace('amp;', '', $page);
 	//Javascript Tweaks
-	$page = str_replace('<body>', file_get_contents("js.php"), $page);
-	$page = str_replace('</style>', file_get_contents("js2.php"), $page);
+	$page = str_replace('<body>', '<body>
+					<script type="text/javascript" >
+					if (top != self) top.location.href = location.href;
+					function setAll()
+					{
+						t = document.forms.q.elements;
+						t.audio.checked=false;
+						t.video.checked=false;
+						t.apps.checked=false;
+						t.games.checked=false;
+						t.other.checked=false;
+					}
+					function rmAll(){ document.forms.q.elements.all.checked=false; }
+					</script>
+					<script src="/static/js/tpb.js" type="text/javascript"></script>
+					<script src="/static/js/prototype.js" type="text/javascript"></script>
+					<script src="/static/js/scriptaculous.js" type="text/javascript"></script>
+					<script src="/static/js/details.js" type="text/javascript"></script>
+					<script language="javascript" type="text/javascript">if (top.location != self.location) {top.location.replace(self.location);}</script>', $page);
 	//Fix static link
 	$page = str_replace("http://static.thepiratebay.se", "static", $page);
 	$page = str_replace("//static.thepiratebay.se", "static", $page);
@@ -40,11 +57,12 @@ function remove_bloat($page)
 	$page = str_replace("http://thepiratebay.se", "http://pirati.rs", $page);
 	$page = str_replace("http://thepiratebay.org", "http://pirati.rs", $page);
 	$page = str_replace("https://thepiratebay.org", "http://pirati.rs", $page);
-	//$page = str_replace("image.bayimg.com/","pirati.rs/img.php?i=", $page);
-	//$page = str_replace("proxy.bayimg.com/","pirati.rs/img.php?i=", $page);
+	//Proxy the images
+	//$page = str_replace("image.bayimg.com/","/img.php?i=", $page);
+	//$page = str_replace("proxy.bayimg.com/","/img.php?i=", $page);
 	//RSS Proxy fix
-	$page = str_replace("http://rss.thepiratebay.se/", "http://pirati.rs/rss.php?id=", $page);
-	$page = str_replace("//rss.194.71.107.81/", "http://pirati.rs/rss.php?id=", $page);
+	$page = str_replace("http://rss.thepiratebay.se/", "/rss.php?id=", $page);
+	$page = str_replace("//rss.194.71.107.81/", "/rss.php?id=", $page);
 	//Remove links that is not needed
 	$page = str_replace("var urlToShow", "var Nothing", $page);
 	$page = str_replace("setCookie(name, value)", "setCookieGone(name, value)", $page);
