@@ -1,7 +1,7 @@
 tpbproxy
 ======
 This script is made to "proxy" content from ThePirateBay.se
-It was originaly designed for http://pirati.rs but later we(PiratskaPartija.com) decided to move it to OpenSource. So evryone who want to proxy conent can proxy it with just a 1 php script :)
+It was originaly designed for http://pirati.rs but later we(PiratskaPartija.com) decided to move it to OpenSource. So evryone who want to proxy conent can proxy it with this php script :)
 WARNING: THIS BRANCH IS STABLE AS GREEK ECONOMY !
 LICENCE
 ======
@@ -23,6 +23,6 @@ AUTHORS
 @m0k1 - Main developer  
 @blaeks - Bug trace  
 @NewTesla.net - Hosting  
-@Google - Helping with evrything  
+@Google - Helping with everything  
 
 Old (not more used) svn url is: https://www.assembla.com/code/tpbproxy/subversion/nodes
