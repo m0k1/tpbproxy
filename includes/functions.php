@@ -30,7 +30,7 @@ function remove_bloat($page)
 	$page = str_replace('torrent client</a>!)</div>', '', $page);
 	$page = str_replace('<div>(Problems with magnets links are fixed by upgrading your', '', $page);
 	//Designfix
-	$page = preg_replace_nth('~<div([^>]*)(class\\s*=\\s*["\']download["\'])([^>]*)>(.*?)</div>~i', '', $html);
+	$page = preg_replace_nth('~<div([^>]*)(class\\s*=\\s*["\']download["\'])([^>]*)>(.*?)</div>~i', '', $page);
 	$page = str_replace("Get this torrent", "DOWNLOAD TORRENT", $page);
 	$page = str_replace("<title>The Pirate Bay - The galaxy's most resilient bittorrent site</title>", "<title>TPB Proxy</title>", $page);
 	//SearchFix
