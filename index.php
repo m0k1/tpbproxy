@@ -2,13 +2,13 @@
 $get = $_GET['x'];
 if (strpos($_GET['x'], '/language/') !== false)
 {
-    $loadurl = file_get_contents("c");
+    $loadurl = file_get_contents("home.html");
     echo ($loadurl);
     exit;
 }
 if ($get == "/settings" || $get == "/language" || $get == "/" || $get == "")
 {
-    $loadurl = file_get_contents("c");
+    $loadurl = file_get_contents("home.html");
     echo ($loadurl);
     exit;
 }
