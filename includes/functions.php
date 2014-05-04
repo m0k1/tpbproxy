@@ -3,6 +3,7 @@
 function remove_bloat($page)
 {
 	//Remove ads
+	$page = preg_replace("@<script[^>]*?>.*?</script>@si","",html_entity_decode($page))
 	$page = preg_replace("/<script.*?>.*?<\/script>/im", "", $page);
 	$page = preg_replace('%<iframe.+?</iframe>%is', '', $page);
 	$page = str_replace('lp.torchbrowser.com', '', $page);
@@ -96,7 +97,7 @@ function remove_bloat($page)
 	$page = str_replace("<a href=\"/switchview.php?view=s\">Single</a>", "<a href=\"#\" onClick=\"alert('This feature is not yet supported. I need to spend a long time adding support for cookies, if/when I do this feature will work.')\">Single</a>", $page);
 	$page = str_replace("<div class=\"detailartist\"", "<div class=\"detailartist\" style=\"display:none; visibility:hidden;\"", $page);
 	//Remove detailed artist info that doesnt work
-	$page = str_replace("ajax_details_artinfo.php", "blank.php", $page);
+	$page = str_replace("ajax_details_artinfo.php", "", $page);
 	return $page;
 }
 
