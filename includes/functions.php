@@ -1,15 +1,5 @@
 <?php
 
-function preg_replace_nth($pattern, $replacement, $subject, $nth=1) 
-{
-    return preg_replace_callback($pattern,
-        function($found) use (&$pattern, &$replacement, &$nth) {
-                $nth--;
-                if ($nth==0) return preg_replace($pattern, $replacement, reset($found) );
-                return reset($found);
-        }, $subject,$nth  );
-}
-
 function remove_bloat($page)
 {
 	//Remove ads
@@ -27,10 +17,9 @@ function remove_bloat($page)
 	$page = str_replace('&nbsp;Anonymous Download', '', $page);
 	$page = str_replace('https://static.thepiratebay.se', '/static', $page);
 	$page = str_replace("http://static.thepiratebay.org/img/bar.gif", "", $page);
-	$page = str_replace('torrent client</a>!)</div>', '', $page);
+	$page = str_replace('torrent client</a>!)</div>', '</a>', $page);
 	$page = str_replace('<div>(Problems with magnets links are fixed by upgrading your', '', $page);
 	//Designfix
-	$page = preg_replace_nth('~<div([^>]*)(class\\s*=\\s*["\']download["\'])([^>]*)>(.*?)</div>~i', '', $page);
 	$page = str_replace("Get this torrent", "DOWNLOAD TORRENT", $page);
 	$page = str_replace("<title>The Pirate Bay - The galaxy's most resilient bittorrent site</title>", "<title>TPB Proxy</title>", $page);
 	//SearchFix
