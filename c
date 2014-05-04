@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Pirati.rs - The Pirate Bay Proxy by Serbian pirates</title>
+	<title>TPB Proxy by Serbian Pirates</title>
 	<meta name="description" content="Download music, movies, games, software and much more. The Pirate Bay is the world's largest bittorrent tracker.">
 	<meta name="keywords" content="mp3, avi, bittorrent, piratebay, pirate bay, proxy, torrent, torrents, movies, music, games, applications, apps, download, upload, share, kopimi, magnets, magnet">
 	<link rel="search" type="application/opensearchdescription+xml" href="http://anonymous.rs/static/opensearch.xml" title="Search The Pirate Bay">
