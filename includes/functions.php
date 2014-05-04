@@ -3,8 +3,7 @@
 function remove_bloat($page)
 {
 	//Remove ads
-	$page = preg_replace("@<script[^>]*?>.*?</script>@si","",html_entity_decode($page))
-	$page = preg_replace("/<script.*?>.*?<\/script>/im", "", $page);
+	$page = preg_replace("@<script[^>]*?>.*?</script>@si","",$page);
 	$page = preg_replace('%<iframe.+?</iframe>%is', '', $page);
 	$page = str_replace('lp.torchbrowser.com', '', $page);
 	$page = str_replace('To download torrent files you need a BitTorrent client.', '', $page);
