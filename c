@@ -5,7 +5,7 @@
 	<title>Pirati.rs - The Pirate Bay Proxy by Serbian pirates</title>
 	<meta name="description" content="Download music, movies, games, software and much more. The Pirate Bay is the world's largest bittorrent tracker.">
 	<meta name="keywords" content="mp3, avi, bittorrent, piratebay, pirate bay, proxy, torrent, torrents, movies, music, games, applications, apps, download, upload, share, kopimi, magnets, magnet">
-	<link rel="search" type="application/opensearchdescription+xml" href="http://pirati.rs/static/opensearch.xml" title="Search The Pirate Bay">
+	<link rel="search" type="application/opensearchdescription+xml" href="http://anonymous.rs/static/opensearch.xml" title="Search The Pirate Bay">
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" href="/static/css5/ie.css">
 		<script src="/static/js/html5_for_ie.js"></script>

@@ -53,10 +53,10 @@ function remove_bloat($page)
 	$page = str_replace("//static.thepiratebay.org", "static", $page);
 	$page = str_replace("http://torrents.thepiratebay.se/", "gettorrent.php?torrent=", $page);
 	$page = str_replace("//torrents.thepiratebay.se/", "gettorrent.php?torrent=", $page);
-	$page = str_replace("https://thepiratebay.se", "htt://pirati.rs", $page);
-	$page = str_replace("http://thepiratebay.se", "http://pirati.rs", $page);
-	$page = str_replace("http://thepiratebay.org", "http://pirati.rs", $page);
-	$page = str_replace("https://thepiratebay.org", "http://pirati.rs", $page);
+	$page = str_replace("https://thepiratebay.se", "htt://anonymous.rs", $page);
+	$page = str_replace("http://thepiratebay.se", "http://anonymous.rs", $page);
+	$page = str_replace("http://thepiratebay.org", "http://anonymous.rs", $page);
+	$page = str_replace("https://thepiratebay.org", "http://anonymous.rs", $page);
 	//Proxy the images
 	//$page = str_replace("image.bayimg.com/","/img.php?i=", $page);
 	//$page = str_replace("proxy.bayimg.com/","/img.php?i=", $page);
