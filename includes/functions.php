@@ -121,16 +121,46 @@ function get_data($url)
 
 function search_curl($url)
 {
-	$ch = curl_init();
- 	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
- 	curl_setopt ($ch, CURLOPT_URL, $url);
-	curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 20);
- 	curl_setopt ($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11');// Only calling the head
- 	curl_setopt($ch, CURLOPT_HEADER, true); // header will be at output
- 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'HEAD'); // HTTP request is 'HEAD'	
- 	$data = curl_exec($ch);	
-	curl_close($ch);	
- 	return $data;
+	$ch      = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 0);
+	curl_setopt($ch, CURLOPT_HEADER, TRUE);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
+	// Getting binary data
+	$header = curl_exec($ch);
+	$retVal = array();
+	$fields = explode("\r\n", preg_replace('/\x0D\x0A[\x09\x20]+/', ' ', $header));
+	foreach ($fields as $field)
+	{
+		if (preg_match('/([^:]+): (.+)/m', $field, $match))
+		{
+			$match[1] = preg_replace('/(?<=^|[\x09\x20\x2D])./e', 'strtoupper("\0")', strtolower(trim($match[1])));
+			if (isset($retVal[$match[1]]))
+			{
+				$retVal[$match[1]] = array(
+					$retVal[$match[1]],
+					$match[2]
+				);
+			}
+			else
+			{
+				$retVal[$match[1]] = trim($match[2]);
+			}
+		}
+	}
+	//here is the redirect
+	if (isset($retVal['Location']))
+	{
+		$data = $retVal['Location'];
+	}
+	else
+	{
+		//keep in mind that if it is a direct link to the image the location header will be missing
+		$data = $_GET[$urlKey];
+	}
+	curl_close($ch);
+	return $data;
 }
 
 ?>
