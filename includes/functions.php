@@ -8,14 +8,11 @@ function remove_bloat($page)
 	$page = str_replace('lp.torchbrowser.com', '', $page);
 	$page = str_replace('To download torrent files you need a BitTorrent client.', '', $page);
 	$page = str_replace('Click here to download.', '', $page);
-	$page = str_replace("document.onclick = displayTheWindow;", "DontdisplayTheWindow()", $page);
-	$page = str_replace("displayTheWindow()", "DontdisplayTheWindow()", $page);
 	$page = str_replace('/static/img/icon-https.gif', '', $page);
 	$page = str_replace('privitize.com', '/blank.php', $page);
 	$page = str_replace('http://cdn1.adexprt.com/lp/bar2.png', '', $page);
 	$page = str_replace('http://cdn2.adexprt.com/lp/bar2.png', '', $page);
 	$page = str_replace('&nbsp;Anonymous Download', '', $page);
-	$page = str_replace('https://static.thepiratebay.se', '/static', $page);
 	$page = str_replace("http://static.thepiratebay.org/img/bar.gif", "", $page);
 	$page = str_replace('torrent client</a>!)</div>', '</a>', $page);
 	$page = str_replace('<div>(Problems with magnets links are fixed by upgrading your', '', $page);
@@ -49,6 +46,7 @@ function remove_bloat($page)
 					<script language="javascript" type="text/javascript">if (top.location != self.location) {top.location.replace(self.location);}</script>', $page);
 	//Fix static link
 	$page = str_replace("http://static.thepiratebay.se", "static", $page);
+	$page = str_replace('https://static.thepiratebay.se', '/static', $page);
 	$page = str_replace("//static.thepiratebay.se", "static", $page);
 	$page = str_replace("//static.thepiratebay.org", "static", $page);
 	$page = str_replace("http://torrents.thepiratebay.se/", "gettorrent.php?torrent=", $page);
@@ -127,7 +125,6 @@ function search_curl($url)
 	curl_setopt($ch, CURLOPT_HEADER, TRUE);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
-	// Getting binary data
 	$header = curl_exec($ch);
 	$retVal = array();
 	$fields = explode("\r\n", preg_replace('/\x0D\x0A[\x09\x20]+/', ' ', $header));
@@ -149,14 +146,12 @@ function search_curl($url)
 			}
 		}
 	}
-	//here is the redirect
 	if (isset($retVal['Location']))
 	{
 		$data = $retVal['Location'];
 	}
 	else
 	{
-		//keep in mind that if it is a direct link to the image the location header will be missing
 		$data = $_GET[$urlKey];
 	}
 	curl_close($ch);

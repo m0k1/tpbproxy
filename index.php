@@ -16,7 +16,7 @@ include("includes/config.php");
 include("includes/functions.php");
 $loadurl = $get;
 $loadurl = "http://$domaintoproxy$loadurl";
-$loadurl = str_replace(" ", "+", $loadurl);
+$loadurl = str_replace(" ", "%20", $loadurl);
 $loadurl = get_data("$loadurl");
 $loadurl = remove_bloat("$loadurl");
 echo ($loadurl);
