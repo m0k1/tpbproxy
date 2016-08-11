@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-        <ShortName>Anonymous.rs</ShortName>
+        <ShortName>thepiratebay.se</ShortName>
         <Description>ThePirateBay Proxy</Description>
         <InputEncoding>UTF-8</InputEncoding>
-        <Image height="16" width="16" type="image/x-icon">http://anonymous.rs/favicon.ico</Image>
-        <Url type="text/html" method="GET" template="http://anonymous.rs/search/{searchTerms}/0/7/0"/>
-        <SearchForm>http://anonymous.rs/</SearchForm>
+        <Image height="16" width="16" type="image/x-icon">https://thepiratebay.se/favicon.ico</Image>
+        <Url type="text/html" method="GET" template="https://thepiratebay.se/search/{searchTerms}/0/7/0"/>
+        <SearchForm>https://thepiratebay.se/</SearchForm>
 </OpenSearchDescription>
-

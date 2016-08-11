@@ -12,7 +12,7 @@ else
 {
 	fclose($fp);
 	$downtext = "Could not connect to caching server 00 <!--  -->";
-	$loadurl  = "http://$domaintoproxy/";
+	$loadurl  = "https://$domaintoproxy/";
 	$loadurl  = get_data("$loadurl");
 	if (strcmp($downtext, $loadurl) == 0)
 	{

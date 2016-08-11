@@ -7,7 +7,7 @@ $q          = $_GET['q'];
 $q          = str_replace(" ", "", $q);
 if ($q != "")
 {
-	$loadurl  = str_replace("$scriptname", "http://$domaintoproxy/s/", $loadurl);
+	$loadurl  = str_replace("$scriptname", "https://$domaintoproxy/s/", $loadurl);
 	$loadurl  = search_curl($loadurl);
 	$finalurl = str_replace("/0/99/", "/0/7/", $loadurl);
 }
