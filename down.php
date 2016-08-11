@@ -16,11 +16,11 @@ else
 	$loadurl  = get_data("$loadurl");
 	if (strcmp($downtext, $loadurl) == 0)
 	{
-		echo "<b>ThePirateBay.se is <font color='red'>down</font></b>";
+		echo "<b>ThePirateBay.org is <font color='red'>down</font></b>";
 	}
 	else
 	{
-		echo "<b>ThePirateBay.se is <font color='green'>up</font></b>";
+		echo "<b>ThePirateBay.org is <font color='green'>up</font></b>";
 	}
 }
 exit;
